@@ -7,16 +7,17 @@
   ;;add whatever packages you want here
   (defvar firfly/packages '(
                             company
-	                  		    monokai-pro-theme
+			    monokai-pro-theme
                             hungry-delete
-			                      swiper
-			                      counsel
-			                      smartparens
-                  			    js2-mode
-                  			    nodejs-repl
-                  			    exec-path-from-shell
-                  			    popwin
-                  			    )  "Default packages")
+			    swiper
+			    counsel
+			    smartparens
+			    js2-mode
+			    nodejs-repl
+			    exec-path-from-shell
+			    popwin
+          window-numbering
+			    )  "Default packages")
 
 (setq package-selected-packages firfly/packages)
 
@@ -40,7 +41,7 @@
 ;;(require 'hungry-delete)
 (global-hungry-delete-mode)
 
-(require 'smartparens-config)
+;;(require 'smartparens-config)
 ;(add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
 (smartparens-global-mode t)
 
