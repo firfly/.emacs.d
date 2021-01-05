@@ -66,4 +66,8 @@
 (popwin-mode t)
 
 
+;;set windows numbering
+(window-numbering-mode 1)
+
+
 (provide 'init-packages)

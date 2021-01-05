@@ -11,11 +11,8 @@
 (require 'init-ui)
 (require 'init-better-defaults)
 (require 'init-keybindings)
-(require 'org)
+(require 'init-org)
 
-
-;;set windows numbering
-(window-numbering-mode 1)
 
 
 
