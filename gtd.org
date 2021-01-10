@@ -1,0 +1,23 @@
+* 工作安排
+
+** TODO [#B] 录制SpaceEmacs Rocks 第二季第六天的视频
+   DEADLINE: <2021-01-07 Thu 16:00> SCHEDULED: <2021-01-07 Thu 15:35>
+   :LOGBOOK:
+   CLOCK: [2021-01-07 Thu 11:44]--[2021-01-07 Thu 12:09] =>  0:25
+   :END:
+
+** TODO [#B] Clean up our configs
+
+* Quick notes
+
+** TODO [#C] 研究子龙的配置
+  https://v.youku.com/v_show/id_XMTU0NjYwNzQ3Mg==.html?spm=a2hbt.13141534.app.5~5!2~5!2~5~5~5!2~5~5!2~5!2~5!2~5~5!17~A
+ 
+  [2021-01-10 Sun 11:10]
+
+** TODO [#C] 研究子龙的配置
+   SCHEDULED: <2021-01-10 Sun 16:00>
+  https://v.youku.com/v_show/id_XMTU0NjYwNzQ3Mg==.html?spm=a2hbt.13141534.app.5~5!2~5!2~5~5~5!2~5~5!2~5!2~5!2~5~5!17~A
+ 
+  [2021-01-10 Sun 11:11]
+
