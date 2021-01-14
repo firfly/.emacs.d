@@ -1,7 +1,9 @@
 (require 'cl)
 
 (when (>= emacs-major-version 24)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+  ;;  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+  (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                           ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
   )
 
 ;;add whatever packages you want here
@@ -23,6 +25,16 @@
 			  expand-region
 			  iedit
 			  org-pomodoro
+			  ;; first of install ag in osx,  brew install the_silver_searcher
+			  helm-ag
+			  ;; npm install -g eslint ; eslint --version
+			  flycheck
+			  auto-yasnippet
+			  powerline-evil
+			  evil
+			  evil-leader
+			  evil-surround
+			  evil-nerd-commenter
 			  )  "Default packages")
 
 (setq package-selected-packages firfly/packages)
@@ -50,7 +62,8 @@
 ;;(require 'smartparens-config)
 					;(add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
 (smartparens-global-mode t)
-(sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+(with-eval-after-load 'smartparens
+  (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil))
 
 
 
@@ -131,5 +144,42 @@
 (window-numbering-mode 1)
 
 (require 'org-pomodoro)
+
+(add-hook 'js2-mode-hook 'flycheck-mode)
+
+(require 'yasnippet)
+(yas-reload-all)
+(add-hook 'prog-node-hook #'yas-minor-mode)
+
+(evil-mode t)
+
+(global-evil-leader-mode)
+
+(evil-leader/set-key
+  "ff" 'find-file
+  "fr" 'recentf-open-files
+  "pf" 'counsel-git
+  "ps" 'helm-do-ag-project-root
+  "sb" 'switch-to-buffer
+  "kb" 'kill-buffer
+  "0" 'select-window-0
+  "1" 'select-window-1
+  "2" 'select-window-2
+  "3" 'select-window-3
+  "w/" 'split-window-right
+  "w-" 'split-window-below
+  "wo" 'delete-other-windows
+  ":" 'counsel-M-x)
+
+(require 'powerline)
+(powerline-default-theme)
+
+(require 'evil-surround)
+(global-evil-surround-mode 1)
+
+(define-key evil-normal-state-map (kbd ",/") 'evilnc-comment-or-uncomment-lines)
+(define-key evil-visual-state-map (kbd ",/") 'evilnc-comment-or-uncomment-lines)
+(evilnc-default-hotkeys)
+
 
 (provide 'init-packages)

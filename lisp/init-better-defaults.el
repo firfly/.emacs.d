@@ -92,7 +92,6 @@
         regexp-history)
   (call-interactively 'occur))
 
-(global-set-key (kbd "M-s o") 'occur-dwim)
 
 (defun firfly/insert-chrome-current-tab-url()
   "Get the URL of the active tab of the first window"
@@ -116,6 +115,21 @@
                   "return links as string\n"))))
     (format "%s" (s-chop-suffix "\"" (s-chop-prefix "\"" result)))))
 
+(display-time-mode 1) ;; 常显
+(setq display-time-24hr-format t) ;;格式
+(setq display-time-day-and-date t) ;;显示时间、星期、日期
 
+;; 行号背景
+(set-face-background 'linum "#000000")
+
+;; 行号前景
+(set-face-foreground 'linum "#CD661D")
+
+;; 当前行背景
+(set-face-background 'hl-line "#545454")
+
+
+;; 当前行前景
+;; (set-face-foreground 'hl-line "#000000")
 
 (provide 'init-better-defaults)
