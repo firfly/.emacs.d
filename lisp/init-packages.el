@@ -1,57 +1,5 @@
 (require 'cl)
 
-;; (when (>= emacs-major-version 24)
-;;   ;;  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-;;   (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-;;                            ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
-;;   )
-
-;; ;;add whatever packages you want here
-;; (defvar firfly/packages '(
-;;                           company
-;; 			  monokai-pro-theme
-;;                           hungry-delete
-;; 			  swiper
-;; 			  counsel
-;; 			  smartparens
-;; 			  js2-mode
-;; 			  nodejs-repl
-;; 			  exec-path-from-shell
-;; 			  popwin
-;; 			  window-numbering
-;; 			  reveal-in-osx-finder
-;; 			  web-mode
-;; 			  js2-refactor
-;; 			  expand-region
-;; 			  iedit
-;; 			  org-pomodoro
-;; 			  ;; first of install ag in osx,  brew install the_silver_searcher
-;; 			  helm-ag
-;; 			  ;; npm install -g eslint ; eslint --version
-;; 			  flycheck
-;; 			  auto-yasnippet
-;; 			  ;; powerline-evil
-;; 			  evil
-;; 			  evil-leader
-;; 			  evil-surround
-;; 			  evil-nerd-commenter
-;; 			  which-key
-;; 			  )  "Default packages")
-
-;; (setq package-selected-packages firfly/packages)
-
-
-;; (defun firfly/packages-installed-p ()
-;;   (loop for pkg in firfly/packages
-;; 	when (not (package-installed-p pkg)) do (return nil)
-;; 	finally (return t)))
-
-;; (unless (firfly/packages-installed-p)
-;;   (message "%s" "Refreshing package database...")
-;;   (package-refresh-contents)
-;;   (dolist (pkg firfly/packages)
-;;     (when (not (package-installed-p pkg))
-;;       (package-install pkg))))
 
 ;; let emacs could find the executable file
 (when (memq window-system '(mac ns))
@@ -201,5 +149,10 @@
               )))
 
 (which-key-mode 1)
+;;(setq which-key-side-window-location 'right)
+
+(add-hook 'python-mode-hook
+	  (lambda()
+	    (set (make-local-variable 'company-backends) '((company-anaconda company-dabbrev-code) company-dabbrev))))
 
 (provide 'init-packages)
